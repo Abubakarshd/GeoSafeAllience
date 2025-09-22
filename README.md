@@ -1,6 +1,78 @@
 # GeoSafeAllience
 # Smart Tourist Safety MVP
 
+## How to Run the MVP Prototype
+
+### 1. Clone & Branch
+```bash
+# Clone the repository
+git clone https://github.com/Abubakarshd/GeoSafeAllience.git
+
+# Navigate to project directory
+cd GeoSafeAllience
+
+# Switch to MVP branch
+git checkout mvp
+```
+
+### 2. Server Setup
+```bash
+# Navigate to server directory and install dependencies
+cd server && npm install
+
+# Create environment file
+cp .env.example server/.env
+# Edit .env and set these variables:
+# SUPABASE_URL=your_supabase_project_url
+# SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
+# PORT=8000 (or your preferred port)
+
+# Start the server
+npm run dev  # uses nodemon for development
+# or
+node index.js  # for production
+```
+
+### 3. Dashboard Setup
+```bash
+# Navigate to dashboard directory and install dependencies
+cd dashboard && npm install
+
+# Start development server
+npm run dev
+
+# Open browser at http://localhost:3000
+```
+
+### 4. Mobile App Setup
+```bash
+# Navigate to mobile app directory and install dependencies
+cd mobile-app && npm install
+
+# Start Expo development server
+npx expo start
+
+# Scan the QR code with Expo Go app on your phone
+# Or press 'a' for Android emulator / 'i' for iOS simulator
+```
+
+### 5. Demo Flow
+1. **Tourist Registration**
+   - Open mobile app
+   - Register as new tourist
+   - Note your userId for verification
+
+2. **Test Emergency Alert**
+   - Navigate to map screen
+   - Press the Panic button
+   - Alert will be generated with your current location
+
+3. **Monitor Dashboard**
+   - Log into admin dashboard
+   - View real-time map
+   - Verify alert appears with tourist location
+   - Check alert details match tourist information
+
 Goal:
 - Build a cross-platform **React Native (Expo)** app for tourists
 - Build a **React web dashboard** for police/tourism authorities
